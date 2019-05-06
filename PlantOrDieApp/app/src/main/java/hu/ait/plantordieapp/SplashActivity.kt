@@ -15,7 +15,7 @@ class SplashActivity : Activity() {
         setContentView(R.layout.splash_file)
 
             Handler().postDelayed({
-                    val intent = Intent(this, MainActivity::class.java);
+                    val intent = Intent(this, ScrollingActivity::class.java);
                     startActivity(intent);
                     finish();
             },3000)

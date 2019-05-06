@@ -3,6 +3,6 @@
     <color name="colorPrimary">#aed851</color>
     <color name="colorPrimaryDark">#84a07c</color>
     <color name="colorAccent">#efff52</color>
-    <color name="splashBackGround">	#ffff </color>
+    <color name="background">	#ffff </color>
     <color name="midNightBlue">	#191970 </color>
 </resources>
