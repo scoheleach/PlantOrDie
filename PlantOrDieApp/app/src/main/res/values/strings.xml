@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">PlantOrDieApp</string>
-    <string name="title_activity_scrolling">THESE ARE MY BABY PLANTS</string>
-
+    <string name="title_activity_scrolling">MY CUTE LIL PLANTS</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_bottom_nav">BottomNavActivity</string>
     <string name="title_home">Home</string>
@@ -10,5 +9,6 @@
     <string name="plant_type">plant type</string>
     <string name="add_this_plant">Add this Plant to Your Plants</string>
     <string name="care_instructions">care instructions</string>
-    <!--<string name = "ap"-->
+    <string name="search_hint">Search Plant\'s Name</string>
+
 </resources>
