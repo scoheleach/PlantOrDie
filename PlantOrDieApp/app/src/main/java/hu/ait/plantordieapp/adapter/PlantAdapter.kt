@@ -39,16 +39,14 @@ class PlantAdapter : RecyclerView.Adapter<PlantAdapter.ViewHolder>, PlantTouchHe
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val plant  = plantItems.get(viewHolder.adapterPosition)
 
-        viewHolder.tvDate.text = plant.createDate
-        viewHolder.cbDone.text = plant.plantText
-        viewHolder.cbDone.isChecked = plant.done
+        viewHolder.tvName.text = plant.nickname
 
         viewHolder.btnDelete.setOnClickListener {
             deletePlant(viewHolder.adapterPosition)
         }
 
-        viewHolder.cbDone.setOnClickListener {
-            plant.done = viewHolder.cbDone.isChecked
+        viewHolder.cbWatered.setOnClickListener {
+            plant.wateredToday = viewHolder.cbWatered.isChecked
             updatePlant(plant)
         }
 
@@ -61,8 +59,6 @@ class PlantAdapter : RecyclerView.Adapter<PlantAdapter.ViewHolder>, PlantTouchHe
     fun updatePlant(plant: Plant) {
         Thread{
             AppDatabase.getInstance(context).plantDao().updatePlant(plant)
-
-
         }.start()
     }
 
@@ -70,7 +66,6 @@ class PlantAdapter : RecyclerView.Adapter<PlantAdapter.ViewHolder>, PlantTouchHe
         plantItems.set(editIndex, plant)
         notifyItemChanged(editIndex)
     }
-
 
     fun addPlant(plant: Plant) {
         plantItems.add(0, plant)
@@ -99,10 +94,10 @@ class PlantAdapter : RecyclerView.Adapter<PlantAdapter.ViewHolder>, PlantTouchHe
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        var tvDate = itemView.tvDate
-        var cbDone = itemView.cbDone
+        var tvName = itemView.tvNickname
         var btnDelete = itemView.btnDelete
         var btnEdit = itemView.btnEdit
+        var cbWatered = itemView.cbWatered
     }
 
 }

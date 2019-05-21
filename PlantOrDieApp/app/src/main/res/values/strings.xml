@@ -95,5 +95,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="plant_type">plant type</string>
+    <string name="add_this_plant">Add this Plant to Your Plants</string>
+    <string name="care_instructions">care instructions</string>
     <!--<string name = "ap"-->
 </resources>
