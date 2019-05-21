@@ -1,10 +1,12 @@
 package hu.ait.plantordieapp
 
 import android.app.SearchManager
+import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import hu.ait.plantordieapp.data.Plant
 import kotlinx.android.synthetic.main.activity_scrolling.*
 import kotlinx.android.synthetic.main.activity_searchable.*
 
@@ -17,10 +19,8 @@ class SearchableActivity : AppCompatActivity() {
         navSearch.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
         btnSearch.setOnClickListener{
-            onSearchRequested()
+            doMySearch(etSearch.text.toString())
         }
-
-
     }
 
     override fun onNewIntent(intent: Intent) {
@@ -37,13 +37,16 @@ class SearchableActivity : AppCompatActivity() {
     }
 
     private fun doMySearch(query: String) {
-        //search shit
+        var intentDetails = Intent()
+        intentDetails.setClass(this@SearchableActivity, PlantInfoActivity::class.java)
+
+        intentDetails.putExtra("PLANT_NAME", query)
+        startActivity(intentDetails)
     }
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.action_search -> {
-
                 return@OnNavigationItemSelectedListener true
             }
 
@@ -61,6 +64,5 @@ class SearchableActivity : AppCompatActivity() {
         }
         false
     }
-
 
 }
