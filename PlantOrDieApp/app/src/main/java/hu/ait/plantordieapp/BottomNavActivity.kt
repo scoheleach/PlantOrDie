@@ -13,10 +13,7 @@ class BottomNavActivity : AppCompatActivity() {
                 message.setText(R.string.title_home)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.action_add -> {
-                message.setText(R.string.title_dashboard)
-                return@OnNavigationItemSelectedListener true
-            }
+
             R.id.action_search -> {
                 message.setText(R.string.title_notifications)
                 return@OnNavigationItemSelectedListener true
