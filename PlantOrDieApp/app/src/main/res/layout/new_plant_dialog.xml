@@ -5,12 +5,18 @@
               android:layout_height="match_parent">
 
     <EditText
-            android:id="@+id/etPlant"
+            android:id="@+id/etPlantName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Enter Plant's Nickname"/>
+    <EditText
+            android:id="@+id/etPlantType"
+            android:hint="Enter Plant Type"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     <EditText
-            android:id="@+id/etDate"
-            android:text="24. 03. 2019."
+            android:id="@+id/etPlantDesc"
+            android:hint="Enter Care Instructions"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 

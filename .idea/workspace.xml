@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31b8a5b8-26b2-4650-95c8-411666e61619" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/java/hu/ait/plantordieapp/BottomNavActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/java/hu/ait/plantordieapp/PlantDialog.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/java/hu/ait/plantordieapp/adapter/PlantAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/java/hu/ait/plantordieapp/data/AppDatabase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/java/hu/ait/plantordieapp/data/Plant.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/java/hu/ait/plantordieapp/data/PlantDAO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/java/hu/ait/plantordieapp/touch/PlantRecyclerTouchCallback.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/java/hu/ait/plantordieapp/touch/PlantTouchHelperCallback.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/res/drawable/ic_home_black_24dp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/res/drawable/ic_notifications_black_24dp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/res/layout/activity_bottom_nav.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/res/layout/new_plant_dialog.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/res/layout/plant_row.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PlantOrDieApp/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PlantOrDieApp/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlantOrDieApp/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/PlantOrDieApp/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/java/hu/ait/plantordieapp/ScrollingActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/java/hu/ait/plantordieapp/ScrollingActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/java/hu/ait/plantordieapp/SplashActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/java/hu/ait/plantordieapp/SplashActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/res/layout/activity_scrolling.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/res/layout/activity_scrolling.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/res/layout/content_scrolling.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/res/layout/content_scrolling.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/res/layout/splash_file.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/res/layout/activity_splash.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/res/menu/bottom_nav_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/res/menu/menu_navigation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/res/values/dimens.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PlantOrDieApp/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,9 +15,10 @@
     <session id="1124420437">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
     </session>
@@ -60,24 +37,34 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="852" />
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="PackagesPane" proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="ProjectPane" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="PlantOrDie" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/PlantOrDieApp" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunDashboard">
@@ -106,10 +93,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="852" extended-state="0" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.32980973" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.49358973" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
