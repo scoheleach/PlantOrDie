@@ -40,6 +40,8 @@ class PlantAdapter : RecyclerView.Adapter<PlantAdapter.ViewHolder>, PlantTouchHe
         val plant  = plantItems.get(viewHolder.adapterPosition)
 
         viewHolder.tvName.text = plant.nickname
+        viewHolder.tvPlant.text = plant.species
+        viewHolder.tvInfo.text = plant.description
 
         viewHolder.btnDelete.setOnClickListener {
             deletePlant(viewHolder.adapterPosition)
@@ -95,6 +97,8 @@ class PlantAdapter : RecyclerView.Adapter<PlantAdapter.ViewHolder>, PlantTouchHe
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         var tvName = itemView.tvNickname
+        var tvInfo = itemView.tvCare
+        var tvPlant = itemView.tvType
         var btnDelete = itemView.btnDelete
         var btnEdit = itemView.btnEdit
         var cbWatered = itemView.cbWatered

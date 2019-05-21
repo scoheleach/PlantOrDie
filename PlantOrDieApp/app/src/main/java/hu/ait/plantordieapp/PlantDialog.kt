@@ -64,7 +64,7 @@ class PlantDialog : DialogFragment() {
             ) as Plant
 
             etNickName.setText(plantItem.nickname)
-            etType.setText(plantItem.plant)
+            etType.setText(plantItem.species)
             etText.setText(plantItem.description)
 
             builder.setTitle("Edit plant")
@@ -104,7 +104,7 @@ class PlantDialog : DialogFragment() {
             Plant(
                 null,
                 etNickName.text.toString(),
-                etType.toString(),
+                etType.text.toString(),
                 etText.text.toString(),
                 false
             )
@@ -116,7 +116,7 @@ class PlantDialog : DialogFragment() {
             ScrollingActivity.KEY_ITEM_TO_EDIT
         ) as Plant
         plantToEdit.nickname = etNickName.text.toString()
-        plantToEdit.plant = etType.text.toString()
+        plantToEdit.species = etType.text.toString()
         plantToEdit.description = etText.text.toString()
 
         plantHandler.plantUpdated(plantToEdit)
