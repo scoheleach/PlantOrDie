@@ -20,25 +20,48 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="nickname"
-                android:textSize="24sp"/>
+                android:textSize="24dp"/>
 
-        <CheckBox
-                android:id="@+id/cbWatered"
+        <TextView
+                android:id="@+id/tvType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="watered"/>
+                android:text="nickname"
+                android:textSize="20dp"/>
 
-        <Button
-                android:id="@+id/btnDelete"
-                android:text="Delete"
+        <TextView
+                android:id="@+id/tvCare"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:text="nickname"
+                android:textSize="18dp"/>
 
-        <Button
-                android:id="@+id/btnEdit"
-                android:text="Edit"
+        <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <CheckBox
+                    android:id="@+id/cbWatered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="watered"/>
+
+            <Button
+                    android:id="@+id/btnDelete"
+                    android:text="Delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+            />
+
+            <Button
+                    android:id="@+id/btnEdit"
+                    android:text="Edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+            />
+        </LinearLayout>
 
     </LinearLayout>
 

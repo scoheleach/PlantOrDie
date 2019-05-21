@@ -7,5 +7,5 @@ import retrofit2.http.Query
 
 interface PlantAPI {
     @GET("/api/species")
-    fun getPlantInfo(@Query("q") base: String) : Call<PlantResult>
+    fun getPlantInfo(@Query("q") base: String, @Query("token") token: String) : Call<PlantResult>
 }

@@ -115,9 +115,9 @@ class PlantDialog : DialogFragment() {
         val plantToEdit = arguments?.getSerializable(
             ScrollingActivity.KEY_ITEM_TO_EDIT
         ) as Plant
+        plantToEdit.nickname = etNickName.text.toString()
         plantToEdit.plant = etType.text.toString()
         plantToEdit.description = etText.text.toString()
-        plantToEdit.nickname = etNickName.text.toString()
 
         plantHandler.plantUpdated(plantToEdit)
     }
