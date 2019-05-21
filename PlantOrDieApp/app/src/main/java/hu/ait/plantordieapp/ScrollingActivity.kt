@@ -1,7 +1,9 @@
 package hu.ait.plantordieapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
@@ -29,9 +31,9 @@ class ScrollingActivity : AppCompatActivity(), PlantDialog.PlantHandler {
 
         setSupportActionBar(toolbar)
 
+        navScroll.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
         fab.setOnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null).show()
             showAddPlantDialog()
         }
 
@@ -46,6 +48,26 @@ class ScrollingActivity : AppCompatActivity(), PlantDialog.PlantHandler {
         saveFirstOpenInfo()
         initRecyclerViewFromDB()
 
+    }
+
+    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.action_search -> {
+                var intentSearch= Intent()
+                intentSearch.setClass(this@ScrollingActivity,
+                    SearchableActivity::class.java)
+
+                startActivity(intentSearch)
+
+                return@OnNavigationItemSelectedListener true
+            }
+
+            R.id.action_my_plants-> {
+                return@OnNavigationItemSelectedListener true
+
+            }
+        }
+        false
     }
 
     fun saveFirstOpenInfo() {
