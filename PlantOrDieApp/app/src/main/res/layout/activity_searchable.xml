@@ -15,28 +15,19 @@
             android:fitsSystemWindows="true"
             android:background="@color/background">
 
-        <LinearLayout
+        <android.support.design.widget.AppBarLayout
+                android:id="@+id/appBar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
-            <EditText
-                    android:id="@+id/etSearch"
-                    android:layout_height="wrap_content"
+            <android.support.v7.widget.SearchView
+                    android:id="@+id/searchBar"
                     android:layout_width="match_parent"
-                    android:hint="@string/search_hint"
-                    android:inputType=""/>
+                    android:layout_height="wrap_content">
 
+            </android.support.v7.widget.SearchView>
 
-            <Button
-                    android:id="@+id/btnSearch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Search"
-                    android:drawableLeft="@drawable/ic_search"/>
-        </LinearLayout>
-
-
+        </android.support.design.widget.AppBarLayout>
 
     </android.support.design.widget.CoordinatorLayout>
 

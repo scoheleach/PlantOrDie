@@ -1,5 +1,6 @@
 package hu.ait.plantordieapp
 
+import android.app.SearchManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
@@ -21,12 +22,14 @@ class PlantInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plant_info)
 
-        var plant = ""
+        var plant = intent.getStringExtra(SearchManager.QUERY)
         val API_KEY = "NTdmZHVNZlJtR09iY2lTN3VZVlJ2UT09"
 
-        if (intent.extras.containsKey("PLANT_NAME")) {
-            plant = intent.getStringExtra("PLANT_NAME")
-        }
+     //   if (intent.extras.containsKey("PLANT_NAME")) {
+//        if (Intent.ACTION_SEARCH == intent.action) {
+////            plant = intent.getStringExtra("PLANT_NAME")
+//            plant = intent.getStringExtra(SearchManager.QUERY)
+//        }
 
         val retrofit = Retrofit.Builder()
             .baseUrl(HOST_URL)

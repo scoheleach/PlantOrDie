@@ -10,10 +10,11 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
 
-        <activity android:name=".SearchResultActivity">
+        <activity android:name=".PlantInfoActivity">
             <meta-data android:name="android.app.default_searchable"
                        android:value=".SearchableActivity" />
         </activity>
+
 
         <activity
                 android:name=".SearchableActivity"

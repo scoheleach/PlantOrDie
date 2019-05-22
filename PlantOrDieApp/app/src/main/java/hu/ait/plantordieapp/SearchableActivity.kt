@@ -6,6 +6,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import android.support.v7.widget.SearchView
 import hu.ait.plantordieapp.data.Plant
 import kotlinx.android.synthetic.main.activity_scrolling.*
 import kotlinx.android.synthetic.main.activity_searchable.*
@@ -17,32 +18,43 @@ class SearchableActivity : AppCompatActivity() {
         setContentView(R.layout.activity_searchable)
 
         navSearch.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        searchBar.isSubmitButtonEnabled = true
 
-        btnSearch.setOnClickListener{
-            doMySearch(etSearch.text.toString())
-        }
-    }
-
-    override fun onNewIntent(intent: Intent) {
-        setIntent(intent)
-        handleIntent(intent)
-    }
-
-    private fun handleIntent(intent: Intent) {
         if (Intent.ACTION_SEARCH == intent.action) {
-            intent.getStringExtra(SearchManager.QUERY)?.also { query ->
-                doMySearch(query)
-            }
+            intent.setClass(this@SearchableActivity, PlantInfoActivity::class.java)
+            startActivity(intent)
+           // intent.getStringExtra(SearchManager.QUERY)
         }
+
+        val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+
+        (searchBar as SearchView).apply {
+            // Assumes current activity is the searchable activity
+            setSearchableInfo(searchManager.getSearchableInfo(componentName))
+            setIconifiedByDefault(false) // Do not iconify the widget; expand it by default
+        }
+
     }
 
-    private fun doMySearch(query: String) {
-        var intentDetails = Intent()
-        intentDetails.setClass(this@SearchableActivity, PlantInfoActivity::class.java)
 
-        intentDetails.putExtra("PLANT_NAME", query)
-        startActivity(intentDetails)
-    }
+//    override fun onNewIntent(intent: Intent) {
+//        setIntent(intent)
+//        handleIntent(intent)
+//    }
+//
+//    private fun handleIntent(intent: Intent) {
+//        if (Intent.ACTION_SEARCH == intent.action) {
+//            intent.getStringExtra(SearchManager.QUERY)
+//        }
+//    }
+
+//    private fun doMySearch(query: String) {
+//        var intentDetails = Intent()
+//        intentDetails.setClass()
+//
+//        intentDetails.putExtra("PLANT_NAME", query)
+//        startActivity(intentDetails)
+//    }
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
