@@ -32,7 +32,6 @@ class PlantDialog : DialogFragment() {
             )
         }
     }
-
     private lateinit var etNickName: EditText
     private lateinit var etType: EditText
     private lateinit var etText: EditText
