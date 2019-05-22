@@ -3,6 +3,9 @@ package hu.ait.plantordieapp
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
+import android.support.design.widget.BottomNavigationView
+import android.view.Menu
+import android.view.MenuItem
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -12,6 +15,9 @@ import com.bumptech.glide.Glide
 import hu.ait.plantordieapp.data.PlantResult
 import hu.ait.plantordieapp.network.PlantAPI
 import kotlinx.android.synthetic.main.activity_plant_info.*
+import kotlinx.android.synthetic.main.activity_scrolling.*
+import kotlinx.android.synthetic.main.activity_searchable.*
+import hu.ait.plantordieapp.adapter.PlantAdapter
 
 class PlantInfoActivity : AppCompatActivity() {
 
@@ -20,6 +26,8 @@ class PlantInfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plant_info)
+
+        navPlant.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
         var plant = ""
         val API_KEY = "NTdmZHVNZlJtR09iY2lTN3VZVlJ2UT09"
@@ -64,5 +72,56 @@ class PlantInfoActivity : AppCompatActivity() {
                 Glide.with(this@PlantInfoActivity).load((imageurl)).into(imgView)
             }
         })
+
+        btnAddThisPlant.setOnClickListener() {
+            showAddPlantDialog()
+        }
+    }
+
+    private fun showAddPlantDialog() {
+        PlantDialog().show(supportFragmentManager, "TAG_PLANT_DIALOG")
+    }
+
+    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        when (item.itemId) {
+            R.id.action_search -> {
+                var intentSearch= Intent()
+                intentSearch.setClass(this@PlantInfoActivity,
+                    SearchableActivity::class.java)
+
+                startActivity(intentSearch)
+
+                return@OnNavigationItemSelectedListener true
+            }
+
+            R.id.action_my_plants-> {
+                var intentScroll= Intent()
+                intentScroll.setClass(this@PlantInfoActivity,
+                    ScrollingActivity::class.java)
+
+                startActivity(intentScroll)
+
+                return@OnNavigationItemSelectedListener true
+
+            }
+        }
+        false
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu_scrolling, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+
+        return when (item.itemId) {
+            R.id.action_settings -> true
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }

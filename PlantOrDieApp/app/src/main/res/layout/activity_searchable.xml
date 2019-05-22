@@ -41,7 +41,7 @@
     </android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.BottomNavigationView
-            android:id="@+id/navSearch"
+            android:id="@+id/navSearchScreen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?android:attr/windowBackground"
