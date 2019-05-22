@@ -19,12 +19,15 @@
 
     <ScrollView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+    >
 
         <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical"
+                android:textAlignment="center"
+        >
             <TextView
                     android:id="@+id/tvPlantType"
                     android:layout_width="wrap_content"
@@ -36,8 +39,9 @@
 
             <ImageView
                     android:id="@+id/imgView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_width="400dp"
+                    android:layout_height="400dp"
+            />
 
             <TextView
                     android:id="@+id/tvPlantCare"
@@ -46,6 +50,7 @@
                     android:text="@string/care_instructions"
                     android:textSize="18dp"
                     android:layout_marginLeft="@dimen/text_margin"
+                    android:layout_marginTop="@dimen/text_margin"
             />
 
             <Button
@@ -53,7 +58,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/add_this_plant"
-                    android:layout_margin="@dimen/text_margin"
+                    android:layout_marginLeft="@dimen/text_margin"
             />
 
         </LinearLayout>
