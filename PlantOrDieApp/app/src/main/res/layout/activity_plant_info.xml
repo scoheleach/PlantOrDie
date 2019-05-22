@@ -31,6 +31,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/plant_type"
                     android:textSize="28dp"
+                    android:layout_marginLeft="@dimen/text_margin"
             />
 
             <ImageView
@@ -44,6 +45,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/care_instructions"
                     android:textSize="18dp"
+                    android:layout_marginLeft="@dimen/text_margin"
             />
 
             <Button
@@ -51,6 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/add_this_plant"
+                    android:layout_margin="@dimen/text_margin"
             />
 
         </LinearLayout>

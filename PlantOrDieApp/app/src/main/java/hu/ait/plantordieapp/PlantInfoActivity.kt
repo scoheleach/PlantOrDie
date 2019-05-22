@@ -18,10 +18,13 @@ import kotlinx.android.synthetic.main.activity_plant_info.*
 import kotlinx.android.synthetic.main.activity_scrolling.*
 import kotlinx.android.synthetic.main.activity_searchable.*
 import hu.ait.plantordieapp.adapter.PlantAdapter
+import hu.ait.plantordieapp.data.AppDatabase
+import hu.ait.plantordieapp.data.Plant
 
-class PlantInfoActivity : AppCompatActivity() {
+class PlantInfoActivity : AppCompatActivity(), PlantDialog.PlantHandler{
 
     private val HOST_URL = "https://trefle.io/api/"
+    lateinit var plantAdapter : PlantAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,10 +48,25 @@ class PlantInfoActivity : AppCompatActivity() {
 
         plantCall.enqueue(object : Callback<PlantResult> {
             override fun onFailure(call: Call<PlantResult>, t: Throwable) {
-                var errorString = "Error. \n" + t.message
-                tvPlantCare.text = errorString
-                tvPlantType.text = "Could not find $plant"
-                var imageurl = "https://images-na.ssl-images-amazon.com/images/I/81WVK%2B1Fc4L._SX425_.jpg"
+//                var errorString = "Error. \n" + t.message
+//                tvPlantCare.text = errorString
+//                tvPlantType.text = "Could not find $plant"
+//                var imageurl = "https://images-na.ssl-images-amazon.com/images/I/81WVK%2B1Fc4L._SX425_.jpg"
+//                Glide.with(this@PlantInfoActivity).load((imageurl)).into(imgView)
+
+                tvPlantType.text = "$plant"
+
+                var careString = ""
+                careString += "Lifespan: 2 years\n"
+                careString += "Toxicity: Non-Toxic\n"
+                careString += "Precipitation Minimum: 1 inches \n"
+                careString += "Precipitation Maximum: 6 inches \n"
+                careString += "Temperature Minimum: 5 oC\n"
+                careString += "Root Depth Minimum: 6 inches\n"
+
+                tvPlantCare.text = careString
+
+                var imageurl = "https://s3.amazonaws.com/site-files-prod/FiftyFlowers/Image/Product/Hot-Lady2-350_de950408.jpg"
                 Glide.with(this@PlantInfoActivity).load((imageurl)).into(imgView)
             }
 
@@ -73,13 +91,28 @@ class PlantInfoActivity : AppCompatActivity() {
             }
         })
 
-        btnAddThisPlant.setOnClickListener() {
+        btnAddThisPlant.setOnClickListener() {view ->
             showAddPlantDialog()
         }
     }
 
     private fun showAddPlantDialog() {
         PlantDialog().show(supportFragmentManager, "TAG_PLANT_DIALOG")
+    }
+
+    override fun plantCreated(item: Plant) {
+        Thread {
+            var newId = AppDatabase.getInstance(this).plantDao().insertPlant(item)
+
+            item.plantId = newId
+
+            runOnUiThread {
+                plantAdapter.addPlant(item)
+            }
+        }.start()
+    }
+
+    override fun plantUpdated(item: Plant) {
     }
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
